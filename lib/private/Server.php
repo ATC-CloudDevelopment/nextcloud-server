@@ -117,6 +117,7 @@ use OC\Preview\GeneratorHelper;
 use OC\Remote\Api\ApiFactory;
 use OC\Remote\InstanceFactory;
 use OC\RichObjectStrings\Validator;
+use OC\Route\Router;
 use OC\Security\Bruteforce\Throttler;
 use OC\Security\CertificateManager;
 use OC\Security\CredentialsManager;
@@ -760,6 +761,7 @@ class Server extends ServerContainer implements IServerContainer {
 			}
 			return $router;
 		});
+		$this->registerAlias(Router::class, IRouter::class);
 		/** @deprecated 19.0.0 */
 		$this->registerDeprecatedAlias('Router', IRouter::class);
 
